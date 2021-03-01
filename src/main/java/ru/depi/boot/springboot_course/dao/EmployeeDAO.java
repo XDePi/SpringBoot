@@ -13,4 +13,6 @@ public interface EmployeeDAO {
     public Employee getEmp(int id);
 
     public void deleteEmp(int id);
+
+    public List<Employee> findAllByName(String name);
 }

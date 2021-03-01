@@ -46,4 +46,13 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         query.setParameter("employeeId", id);
         query.executeUpdate();
     }
+
+    @Override
+    public List<Employee> findAllByName(String name) {
+        Query query = entityManager.createQuery("from Employee " +
+                "where name=:employeeName");
+        query.setParameter("employeeName", name);
+        List<Employee> list = query.getResultList();
+        return list;
+    }
 }

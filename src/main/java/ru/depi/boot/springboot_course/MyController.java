@@ -46,4 +46,11 @@ public class MyController {
         employeeService.deleteEmp(id);
         return "Employee with id=" + id + " was deleted from db";
     }
+
+    @GetMapping("/employees/name/{name}")
+    public List<Employee> findAllByName(@PathVariable String name) {
+        List<Employee> list = employeeService.findAllByName(name);
+        return list;
+    }
+
 }
